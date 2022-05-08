@@ -1,0 +1,162 @@
+/**
+    ==================
+    == FONTS IMPORT ==
+    ==================
+ */
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Oswald:wght@700&family=Roboto+Flex:wght@100&display=swap');
+
+/**
+    =================
+    == REUSED TAGS ==
+    =================
+ */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**
+    ===================
+    == HTML and BODY ==
+    ===================
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    background-color: #343434;
+
+    color: #e7e7e7;
+}
+
+/**
+    ============
+    == HEADER ==
+    ============
+ */
+header {
+    width: 100vw;
+    height: 60px;
+
+    position: absolute;
+
+    z-index: 1;
+}
+
+/**
+    ===================
+    == HEADER / LOGO ==
+    ===================
+ */
+#logo {
+    margin-left: 20px;
+
+    float: left;
+
+    font-family: "Koulen", Helvetica, Arial, serif;
+    font-size: 1.3em;
+    line-height: 60px;
+    text-shadow: 1px 1px 0 rgb(84, 84, 84);
+
+    cursor: pointer;
+}
+
+#logo span {
+    position: absolute;
+}
+
+#logo span:first-child {
+    z-index: 1;
+}
+
+#logo span:last-child {
+    margin: 13px 10px 0 20px;
+
+    line-height: 47px;
+    text-shadow: 1px 1px 0 rgba(84, 84, 84, 0.6);
+
+    opacity: 0.6;
+}
+
+/**
+    ===================
+    == HEADER / MENU ==
+    ===================
+ */
+#menu {
+    margin-right: 20px;
+
+    float: right;
+
+    font-size: 1.3em;
+    line-height: 60px;
+
+    cursor: pointer;
+}
+
+/**
+    ==========
+    == MAIN ==
+    ==========
+ */
+
+/**
+    ==================
+    == MAIN / FIRST ==
+    ==================
+ */
+#first {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background: linear-gradient(35deg, #7d0ce2, #8b0069);
+}
+
+#first::after {
+    content: "";
+
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+
+    background-color: #e3e7ef;
+    clip-path: polygon(0 90%, 100% 65%, 100% 100%, 0% 100%);
+}
+
+#first h1 {
+    font-family: "Oswald", Helvetica, Arial, serif;
+    font-size: 1.7em;
+    text-transform: uppercase;
+}
+
+#first p {
+    font-family: "Roboto Flex", Helvetica, Arial, serif;
+}
+
+#first span {
+    bottom: 30px;
+
+    position: absolute;
+
+    font-size: 2em;
+    color: #343434;
+
+    cursor: pointer;
+
+    z-index: 1;
+}
