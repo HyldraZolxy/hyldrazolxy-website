@@ -15,9 +15,22 @@
                 <span>Hyldra</span>
                 <span>Zolxy</span>
             </div>
-            <div id="menu">
-                <span class="ion-navicon-round"></span>
-            </div>
+
+            <span id="menuMobileOpen" class="ion-navicon-round"></span>
+            <nav class="hidden">
+                <span id="menuMobileClose" class="ion-close-round"></span>
+                <ul>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">My Work</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <main>
             <section id="first" class="flex">
@@ -26,5 +39,8 @@
                 <span class="ion-chevron-down"></span>
             </section>
         </main>
+
+        <script type="text/javascript" src="./js/libs/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="./js/animation.js"></script>
     </body>
 </html>

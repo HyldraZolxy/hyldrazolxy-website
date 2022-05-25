@@ -34,6 +34,9 @@ body {
     background-color: #343434;
 
     color: #e7e7e7;
+
+    transition: all .5s;
+    overflow: hidden;
 }
 
 /**
@@ -64,8 +67,6 @@ header {
     font-size: 1.3em;
     line-height: 60px;
     text-shadow: 1px 1px 0 rgb(84, 84, 84);
-
-    cursor: pointer;
 }
 
 #logo span {
@@ -90,7 +91,7 @@ header {
     == HEADER / MENU ==
     ===================
  */
-#menu {
+#menuMobileOpen {
     margin-right: 20px;
 
     float: right;
@@ -99,6 +100,73 @@ header {
     line-height: 60px;
 
     cursor: pointer;
+
+    visibility: visible;
+}
+
+nav {
+    width: 200px;
+    height: 100vh;
+    right: 0;
+
+    position: fixed;
+
+    background-color: rgb(84, 84, 84);
+
+    z-index: 1;
+
+    --show: cubic-bezier(.17,.67,.83,.67) 300ms;
+    --hide: cubic-bezier(.17,.67,.83,.67) 200ms;
+
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+            transform var(--show);
+}
+
+nav.hidden {
+    opacity: 0;
+    transform: translateX(150%);
+    transition:
+            opacity var(--hide),
+            transform var(--hide);
+}
+
+nav span {
+    margin-left: -45px;
+    padding: 10px 15px;
+
+    display: block;
+
+    position: absolute;
+
+    font-size: 1.3em;
+
+    background-color: rgb(84, 84, 84);
+    border-bottom-left-radius: 3px;
+
+    cursor: pointer;
+
+    visibility: visible;
+}
+
+nav li {
+    padding: 10px 0;
+    display: block;
+
+    text-align: center;
+
+    font-size: 1.2em;
+
+    border-bottom: solid rgba(255, 255, 255, 0.05) 1px;
+}
+
+nav a {
+    text-decoration: none;
+
+    font-family: "Roboto Flex", Helvetica, Arial, serif;
+
+    color: #e7e7e7;
 }
 
 /**
@@ -159,4 +227,98 @@ header {
     cursor: pointer;
 
     z-index: 1;
+}
+
+@media (min-width: 768px) and (min-height: 600px) {
+    /**
+        ============
+        == HEADER ==
+        ============
+     */
+    header {
+        height: 70px;
+    }
+
+    /**
+        ===================
+        == HEADER / LOGO ==
+        ===================
+     */
+    #logo {
+        font-size: 1.5em;
+        line-height: 70px;
+    }
+
+    #logo span:last-child {
+        line-height: 57px;
+    }
+
+    /**
+        ===================
+        == HEADER / MENU ==
+        ===================
+     */
+    #menuMobileOpen {
+        visibility: hidden;
+    }
+
+    nav {
+        width: initial;
+        height: initial;
+        margin-right: 15px;
+
+        position: absolute;
+        float: right;
+
+        background-color: transparent;
+
+        z-index: 0;
+
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    nav.hidden {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    nav span {
+        visibility: hidden;
+    }
+
+    nav li {
+        padding: 0 10px;
+        display: inline-block;
+
+        text-align: center;
+
+        font-size: 1.1em;
+        line-height: 70px;
+
+        border-bottom: inherit;
+    }
+
+    nav a:hover {
+        text-shadow: #e7e7e7 0 0 8px;
+    }
+
+    /**
+        ==========
+        == MAIN ==
+        ==========
+     */
+
+    /**
+        ==================
+        == MAIN / FIRST ==
+        ==================
+     */
+    #first h1 {
+        font-size: 2em;
+    }
+
+    #first p {
+        font-size: 1.3em;
+    }
 }
